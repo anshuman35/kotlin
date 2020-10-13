@@ -104,3 +104,14 @@ public class helpers/EmptyContinuation {
     public method resumeWith(@org.jetbrains.annotations.NotNull p0: java.lang.Object): void
     public final inner class helpers/EmptyContinuation$Companion
 }
+
+@kotlin.Metadata
+public final class helpers/ResultContinuation {
+    // source: 'CoroutineUtil.kt'
+    private final @org.jetbrains.annotations.NotNull field context: kotlin.coroutines.EmptyCoroutineContext
+    public @kotlin.jvm.JvmField @org.jetbrains.annotations.Nullable field result: java.lang.Object
+    public method <init>(): void
+    public synthetic bridge method getContext(): kotlin.coroutines.CoroutineContext
+    public @org.jetbrains.annotations.NotNull method getContext(): kotlin.coroutines.EmptyCoroutineContext
+    public method resumeWith(@org.jetbrains.annotations.NotNull p0: java.lang.Object): void
+}
