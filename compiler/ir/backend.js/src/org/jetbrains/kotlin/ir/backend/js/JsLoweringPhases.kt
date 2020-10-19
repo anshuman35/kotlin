@@ -611,6 +611,12 @@ private val blockDecomposerLoweringPhase = makeBodyLoweringPhase(
     prerequisite = setOf(typeOperatorLoweringPhase, suspendFunctionsLoweringPhase)
 )
 
+private val labeledLoopLoweringPhase = makeBodyLoweringPhase(
+    { LabeledLoopLowering() },
+    name = "LabeledLoopLowering",
+    description = "Transform statement-like-expression nodes into pure-statement to make it easily transform into JS",
+)
+
 private val classReferenceLoweringPhase = makeBodyLoweringPhase(
     ::ClassReferenceLowering,
     name = "ClassReferenceLowering",
@@ -740,6 +746,7 @@ val loweringList = listOf<Lowering>(
     inlineClassUsageLoweringPhase,
     autoboxingTransformerPhase,
     blockDecomposerLoweringPhase,
+    labeledLoopLoweringPhase,
     constLoweringPhase,
     objectDeclarationLoweringPhase,
     objectUsageLoweringPhase,
