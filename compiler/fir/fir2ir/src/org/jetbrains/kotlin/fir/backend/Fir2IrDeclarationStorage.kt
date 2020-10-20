@@ -679,7 +679,9 @@ class Fir2IrDeclarationStorage(
         irParent: IrDeclarationParent
     ): IrProperty {
         fieldToPropertyCache[field]?.let { return it }
-        return createIrProperty(field.toStubProperty(), irParent)
+        return createIrProperty(field.toStubProperty(), irParent).apply {
+            fieldToPropertyCache[field] = this
+        }
     }
 
     private fun FirField.toStubProperty(): FirProperty {
