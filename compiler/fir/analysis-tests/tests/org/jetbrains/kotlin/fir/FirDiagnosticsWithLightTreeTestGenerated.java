@@ -2029,6 +2029,11 @@ public class FirDiagnosticsWithLightTreeTestGenerated extends AbstractFirDiagnos
             runTest("compiler/fir/analysis-tests/testData/resolve/problems/javaQualifier.kt");
         }
 
+        @TestMetadata("kt42092.kt")
+        public void testKt42092() throws Exception {
+            runTest("compiler/fir/analysis-tests/testData/resolve/problems/kt42092.kt");
+        }
+
         @TestMetadata("kt42346.kt")
         public void testKt42346() throws Exception {
             runTest("compiler/fir/analysis-tests/testData/resolve/problems/kt42346.kt");

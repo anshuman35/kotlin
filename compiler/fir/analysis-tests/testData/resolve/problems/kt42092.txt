@@ -1,0 +1,21 @@
+FILE: kt42092.kt
+    public final fun test(): R|kotlin/Int| {
+        ^test Int(1)
+    }
+    public final fun box(): R|kotlin/String| {
+        lval l: R|java/util/ArrayList<kotlin/Long>| = R|java/util/ArrayList.ArrayList|<R|kotlin/Long|>()
+        R|<local>/l|.R|FakeOverride<java/util/ArrayList.add: R|kotlin/Boolean|>|(Long(1))
+        R|<local>/l|.R|FakeOverride<java/util/ArrayList.add: R|kotlin/Boolean|>|(Long(-1))
+        R|<local>/l|.<Inapplicable(INAPPLICABLE): java/util/ArrayList.add>#(Int(1).R|kotlin/Int.inv|())
+        R|<local>/l|.<Inapplicable(INAPPLICABLE): java/util/ArrayList.add>#(Int(1).R|kotlin/Int.unaryMinus|())
+        R|<local>/l|.<Inapplicable(INAPPLICABLE): java/util/ArrayList.add>#(R|/test|())
+        ^box when () {
+            (R|<local>/l|.R|FakeOverride<java/util/ArrayList.get: R|ft<kotlin/Long, kotlin/Long?>!|>|(Int(0)) is R|kotlin/Long|) ->  {
+                String(OK)
+            }
+            else ->  {
+                <strcat>(String(fail: ), R|<local>/l|.R|FakeOverride<java/util/ArrayList.get: R|ft<kotlin/Long, kotlin/Long?>!|>|(Int(0)).R|kotlin/Any.toString|())
+            }
+        }
+
+    }
