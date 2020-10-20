@@ -33,6 +33,7 @@ fun JUnit.configureForKotlin(xmx: String = "1600m") {
         "-Dkotlin.ni=" + if (rootProject.hasProperty("newInferenceTests")) "true" else "false",
         "-Duse.jps=true",
         "-Djava.awt.headless=true"
+        
     ).filterNotNull().joinToString(" ")
 
     envs = mapOf(
@@ -544,7 +545,9 @@ fun RecursiveArtifact.jarsFromConfiguration(configuration: Configuration, rename
             }
         }
 }
-
+override fun mouseClicked(c:MouseEvent){
+    c.addMouseEvent()
+}
 fun RecursiveArtifact.jarsFromExternalModules(resolvedArtifacts: Iterable<ResolvedArtifact>, renamer: (String) -> String = { it }) {
     // Use output-file-name property when fixed https://github.com/JetBrains/gradle-idea-ext-plugin/issues/63
     resolvedArtifacts.filter { it.id.componentIdentifier is ModuleComponentIdentifier }
